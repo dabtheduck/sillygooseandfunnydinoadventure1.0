@@ -17,19 +17,19 @@ h1,h2,p,label,button { font-family: 'Josefin Sans', sans-serif; }
 #introPage h2 { text-align:center; font-size:26px; margin-bottom:15px; }
 
 .title-image {
-display: block;          /* Make the image a block element so margin works */
-margin: 0 auto 20px;     /* Center horizontally and add 20px bottom space */
-max-width: 80%;          /* Image won’t exceed 80% of container width */
-height: auto;            /* Maintain aspect ratio */
-border-radius: 12px;     /* Optional: rounded corners */
+display: block;
+margin: 0 auto 20px;
+max-width: 80%;
+height: auto;
+border-radius: 12px;
 }
 
 .adventure-image {
-display: block;          /* Make the image a block element so margin works */
-margin: 0 auto 20px;     /* Center horizontally and add 20px bottom space */
-max-width: 80%;          /* Image won’t exceed 80% of container width */
-height: auto;            /* Maintain aspect ratio */
-border-radius: 12px;     /* Optional: rounded corners */
+display: block;
+margin: 0 auto 20px;
+max-width: 80%;
+height: auto;
+border-radius: 12px;
 }
 
 button { padding:10px 18px; font-size:16px; border-radius:8px; border:none; cursor:pointer; margin-top:10px; transition: all 0.2s ease; }
@@ -44,11 +44,6 @@ input[type="radio"] { display: none; }
 .pill { display: inline-block; padding: 10px 22px; margin: 6px 6px 0 0; border-radius: 50px; background-color: #f0f0f0; cursor: pointer; font-weight: 500; transition: all 0.2s ease; }
 .pill:hover { background-color: #d0e4ff; transform: scale(1.05) translateY(-2px); }
 input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-
-.summary-card { background:#f9f9f9; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:18px 20px; margin-bottom:16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.summary-card:hover { transform: translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,0.15); }
-.summary-card .question-text { font-weight:700; font-size:16px; margin-bottom:8px; color:#333; }
-.summary-card .answer-text { font-weight:400; font-size:15px; color:#555; }
 
 .adventure-description { font-size:16px; line-height:1.6; color:#444; margin-top:12px; text-align:left; }
 </style>
@@ -79,10 +74,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino thinks for a moment and says…
   </h2>
 
-  <input type="radio" name="q1" id="q1A" value="A">
+  <input type="radio" name="q1" id="q1A" value="A" onclick="nextQuestion(1)">
   <label for="q1A" class="pill">Of course, you silly goose! Anytime!</label>
 
-  <input type="radio" name="q1" id="q1B" value="B">
+  <input type="radio" name="q1" id="q1B" value="B" onclick="nextQuestion(1)">
   <label for="q1B" class="pill">Oh, wells…I…might need to have a think.</label>
 </div>
 
@@ -94,10 +89,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino replies, “I’d like to…”
   </h2>
 
-  <input type="radio" name="q2" id="q2A" value="A">
+  <input type="radio" name="q2" id="q2A" value="A" onclick="nextQuestion(2)">
   <label for="q2A" class="pill">…go somewhere I can get my weekly dose of vitamin D!</label>
 
-  <input type="radio" name="q2" id="q2B" value="B">
+  <input type="radio" name="q2" id="q2B" value="B" onclick="nextQuestion(2)">
   <label for="q2B" class="pill">…go somewhere chill — literally and figuratively.</label>
 </div>
 
@@ -108,10 +103,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “Okay but what if…I BRIBE YOU WITH CHOCOLATE! Would you go on an adventure with me?”
   </h2>
 
-  <input type="radio" name="q3" id="q3A" value="A">
+  <input type="radio" name="q3" id="q3A" value="A" onclick="nextQuestion(3)">
   <label for="q3A" class="pill">“For chocolate I’d do anything!!!” says dino. “No way that worked, now you’re the silly one,” says silly goose.</label>
 
-  <input type="radio" name="q3" id="q3B" value="B">
+  <input type="radio" name="q3" id="q3B" value="B" onclick="nextQuestion(3)">
   <label for="q3B" class="pill">After thinking for a good long while, dino decides that there’s no harm going on an adventure with silly goose. “Sure, why not?” dino replies nonchalantly.</label>
 </div>
 
@@ -122,10 +117,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino thinks it’s going to be…
   </h2>
 
-  <input type="radio" name="q4" id="q4A" value="A">
+  <input type="radio" name="q4" id="q4A" value="A" onclick="nextQuestion(4)">
   <label for="q4A" class="pill">Really fun!</label>
 
-  <input type="radio" name="q4" id="q4B" value="B">
+  <input type="radio" name="q4" id="q4B" value="B" onclick="nextQuestion(4)">
   <label for="q4B" class="pill">Tiring but also fun!</label>
 </div>
 
@@ -135,10 +130,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “Okay!” says silly goose, “I have another question for you now…would you rather…”
   </h2>
 
-  <input type="radio" name="q5" id="q5A" value="A">
+  <input type="radio" name="q5" id="q5A" value="A" onclick="nextQuestion(5)">
   <label for="q5A" class="pill">…sit still but move your hands?</label>
 
-  <input type="radio" name="q5" id="q5B" value="B">
+  <input type="radio" name="q5" id="q5B" value="B" onclick="nextQuestion(5)">
   <label for="q5B" class="pill">…move around but keep your hands still?</label>
 </div>
 
@@ -149,10 +144,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino…
   </h2>
 
-  <input type="radio" name="q6" id="q6A" value="A">
+  <input type="radio" name="q6" id="q6A" value="A" onclick="nextQuestion(6)">
   <label for="q6A" class="pill">groans a little and attempts to rage bait silly goose into giving an answer.</label>
 
-  <input type="radio" name="q6" id="q6B" value="B">
+  <input type="radio" name="q6" id="q6B" value="B" onclick="nextQuestion(6)">
   <label for="q6B" class="pill">decides not to probe further and just enjoy the adventure!</label>
 </div>
 
@@ -163,10 +158,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino is completely bamboozled…
   </h2>
 
-  <input type="radio" name="q7" id="q7A" value="A">
+  <input type="radio" name="q7" id="q7A" value="A" onclick="nextQuestion(7)">
   <label for="q7A" class="pill">…but decides that he’ll trust silly goose this time!</label>
 
-  <input type="radio" name="q7" id="q7B" value="B">
+  <input type="radio" name="q7" id="q7B" value="B" onclick="nextQuestion(7)">
   <label for="q7B" class="pill">…so he decides to rage bait silly goose into accidentally revealing a few clues.</label>
 </div>
 
@@ -177,10 +172,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino is completely bamboozled…
   </h2>
 
-  <input type="radio" name="q8" id="q8A" value="A">
+  <input type="radio" name="q8" id="q8A" value="A" onclick="nextQuestion(8)">
   <label for="q8A" class="pill">…but decides that he’ll trust silly goose this time!</label>
 
-  <input type="radio" name="q8" id="q8B" value="B">
+  <input type="radio" name="q8" id="q8B" value="B" onclick="nextQuestion(8)">
   <label for="q8B" class="pill">…so he decides to rage bait silly goose into accidentally revealing a few clues.</label>
 </div>
 
@@ -191,10 +186,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “It’s not an Olympic sport! It’s also something I think we both have minimal experience in. So…I think we’ll have fun figuring out this activity!”
   </h2>
 
-  <input type="radio" name="q9" id="q9A" value="A">
+  <input type="radio" name="q9" id="q9A" value="A" onclick="nextQuestion(9)">
   <label for="q9A" class="pill">Dino nods, “Can’t wait to see what it’s gonna be!”</label>
 
-  <input type="radio" name="q9" id="q9B" value="B">
+  <input type="radio" name="q9" id="q9B" value="B" onclick="nextQuestion(9)">
   <label for="q9B" class="pill">Dino is a little skeptical…but he’s also excited!</label>
 </div>
 
@@ -204,10 +199,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     At this juncture, dino’s tummy rumbles a little. Dino is craving…
   </h2>
 
-  <input type="radio" name="q10" id="q10A" value="A">
+  <input type="radio" name="q10" id="q10A" value="A" onclick="nextQuestion(10)">
   <label for="q10A" class="pill">burgers</label>
 
-  <input type="radio" name="q10" id="q10B" value="B">
+  <input type="radio" name="q10" id="q10B" value="B" onclick="nextQuestion(10)">
   <label for="q10B" class="pill">proper western food</label>
 </div>
 
@@ -218,10 +213,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     And it was at this moment in time that dino realised he may have made a…
   </h2>
 
-  <input type="radio" name="q11" id="q11A" value="A">
+  <input type="radio" name="q11" id="q11A" value="A" onclick="nextQuestion(11)">
   <label for="q11A" class="pill">terrible mistake. What on earth is she up to now?</label>
 
-  <input type="radio" name="q11" id="q11B" value="B">
+  <input type="radio" name="q11" id="q11B" value="B" onclick="nextQuestion(11)">
   <label for="q11B" class="pill">wonderful choice. Perhaps she knows what she’s doing after all…</label>
 </div>
 
@@ -232,10 +227,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     Dino’s tummy chimes in with a rumble. Dino is craving…
   </h2>
 
-  <input type="radio" name="q12" id="q12A" value="A">
+  <input type="radio" name="q12" id="q12A" value="A" onclick="nextQuestion(12)">
   <label for="q12A" class="pill">stewed meats</label>
 
-  <input type="radio" name="q12" id="q12B" value="B">
+  <input type="radio" name="q12" id="q12B" value="B" onclick="nextQuestion(12)">
   <label for="q12B" class="pill">BBQ meats</label>
 </div>
 
@@ -245,10 +240,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “Okayyy,” silly goose hedges, “I’ll give you a tiny clue… We’re going camping!”
   </h2>
 
-  <input type="radio" name="q13" id="q13A" value="A">
+  <input type="radio" name="q13" id="q13A" value="A" onclick="nextQuestion(13)">
   <label for="q13A" class="pill">Dino thinks they’re going to the beach!</label>
 
-  <input type="radio" name="q13" id="q13B" value="B">
+  <input type="radio" name="q13" id="q13B" value="B" onclick="nextQuestion(13)">
   <label for="q13B" class="pill">Dino knows there’s got to be a twist, no way they’re going to the beach…</label>
 </div>
 
@@ -259,10 +254,10 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “Pengu would be comfortable in a place like this! Oh and, some sort of tripping and falling might be involved — so come prepared!”
   </h2>
 
-  <input type="radio" name="q14" id="q14A" value="A">
+  <input type="radio" name="q14" id="q14A" value="A" onclick="nextQuestion(14)">
   <label for="q14A" class="pill">Dino thinks they’re going to Snow City!</label>
 
-  <input type="radio" name="q14" id="q14B" value="B">
+  <input type="radio" name="q14" id="q14B" value="B" onclick="nextQuestion(14)">
   <label for="q14B" class="pill">Dino knows Snow City is a scam targeted at kids only, it’s gotta be something else.</label>
 </div>
 
@@ -272,21 +267,12 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
     “Okieee, now are you ready for the big reveal?” silly goose finally asks.
   </h2>
 
-  <input type="radio" name="q15" id="q15A" value="A">
+  <input type="radio" name="q15" id="q15A" value="A" onclick="nextQuestion(15)">
   <label for="q15A" class="pill">“FINALLY!!!!” dino shouts with glee.</label>
 
-  <input type="radio" name="q15" id="q15B" value="B">
+  <input type="radio" name="q15" id="q15B" value="B" onclick="nextQuestion(15)">
   <label for="q15B" class="pill">“Oh no, is this a trick question…” dino wonders silently.</label>
 </div>
-
-
-  <!-- Summary Page -->
-  <div id="summaryPage" class="page">
-    <h2>Your Answers</h2>
-    <div id="summary"></div>
-    <button class="next" onclick="showAdventure()">Reveal the Adventure Details!</button>
-    <button class="back" onclick="prevQuestionSummary()">Back</button>
-  </div>
 
   <!-- Adventure Page -->
   <div id="adventurePage" class="page">
@@ -324,55 +310,13 @@ const nextQuestionMap = {
 
 // Personality Patterns
 const patterns = [
-  {
-    answers: { q2: "A", q10: "A" },
-    location: "Marina Barrage",
-    nomz: "Shake Shack",
-    outfit: "Can sit on grass",
-    mapLink: "https://maps.app.goo.gl/aHgYkGbzuSrLduaAA"
-  },
-
-  {
-    answers: { q2: "A", q10: "B" },
-    location: "Marina Barrage",
-    nomz: "Buddy Hoagies",
-    outfit: "Can sit on grass",
-    mapLink: "https://maps.app.goo.gl/q7CPbsWt5BRmDSYT7"
-  },
-
-  {
-    answers: { q2: "B", q5: "A", q12: "A" },
-    location: "Orchard",
-    nomz: "Fat Bird Chicken Hotpot",
-    outfit: "Anything works!",
-    mapLink: "https://maps.app.goo.gl/yck6GovyV2VNyQfh6"
-  },
-
-  {
-    answers: { q2: "B", q5: "A", q12: "B" },
-    location: "Orchard",
-    nomz: "Yakiniku Like 313@somerset",
-    outfit: "Anything works!",
-    mapLink: "https://maps.app.goo.gl/r8mWFkaJF6jSrKLB6"
-  },
-
-  {
-    answers: { q2: "B", q5: "B", q12: "A" },
-    location: "Stadium",
-    nomz: "Fat Bird Chicken Hotpot",
-    outfit: "It’s gonna be cold! Long pants that you can fall in",
-    mapLink: "https://maps.app.goo.gl/JP1env6SzWnoZndK6"
-  },
-
-  {
-    answers: { q2: "B", q5: "B", q12: "B" },
-    location: "Stadium",
-    nomz: "Hey! Yakiniku @bugis",
-    outfit: "It’s gonna be cold! Long pants that you can fall in",
-    mapLink: "https://maps.app.goo.gl/JP1env6SzWnoZndK6"
-  }
+  { answers: { q2: "A", q10: "A" }, location: "Marina Barrage", nomz: "Shake Shack", outfit: "Can sit on grass", mapLink: "https://maps.app.goo.gl/aHgYkGbzuSrLduaAA" },
+  { answers: { q2: "A", q10: "B" }, location: "Marina Barrage", nomz: "Buddy Hoagies", outfit: "Can sit on grass", mapLink: "https://maps.app.goo.gl/q7CPbsWt5BRmDSYT7" },
+  { answers: { q2: "B", q5: "A", q12: "A" }, location: "Orchard", nomz: "Fat Bird Chicken Hotpot", outfit: "Anything works!", mapLink: "https://maps.app.goo.gl/yck6GovyV2VNyQfh6" },
+  { answers: { q2: "B", q5: "A", q12: "B" }, location: "Orchard", nomz: "Yakiniku Like 313@somerset", outfit: "Anything works!", mapLink: "https://maps.app.goo.gl/r8mWFkaJF6jSrKLB6" },
+  { answers: { q2: "B", q5: "B", q12: "A" }, location: "Stadium", nomz: "Fat Bird Chicken Hotpot", outfit: "It’s gonna be cold! Long pants that you can fall in", mapLink: "https://maps.app.goo.gl/JP1env6SzWnoZndK6" },
+  { answers: { q2: "B", q5: "B", q12: "B" }, location: "Stadium", nomz: "Hey! Yakiniku @bugis", outfit: "It’s gonna be cold! Long pants that you can fall in", mapLink: "https://maps.app.goo.gl/JP1env6SzWnoZndK6" }
 ];
-
 
 // Page Navigation
 function showPage(id){
@@ -382,7 +326,6 @@ function showPage(id){
 function startIntro(){ playClick(); showPage("introPage"); }
 function startQuiz(){ playClick(); showPage("q1"); history=[]; }
 
-
 // Next Question
 function nextQuestion(num){
   playClick();
@@ -391,15 +334,14 @@ function nextQuestion(num){
 
   const current = document.getElementById(`q${num}`);
   userQuestions[`q${num}`] = current.querySelector(".question-text").textContent;
-  userAnswers[`q${num}`] = selected.value; // instead of selected.parentElement.textContent
+  userAnswers[`q${num}`] = selected.value;
   history.push(current.id);
 
   let nextId = nextQuestionMap[`q${num}`]?.[selected.value];
   current.classList.remove("active");
   if(nextId) showPage(nextId);
-  else showSummary();
+  else showAdventure();
 }
-
 
 // Back Navigation
 function prevQuestionSummary(){
@@ -409,48 +351,22 @@ function prevQuestionSummary(){
 }
 
 
-// Summary Page
-function showSummary(){
-  showPage("summaryPage");
-  const summaryDiv = document.getElementById("summary");
-  summaryDiv.innerHTML="";
-  for(const q in userAnswers){
-    const card = document.createElement("div");
-    card.className="summary-card";
-    card.innerHTML=`
-      <div class="question-text">${userQuestions[q]}</div>
-      <div class="answer-text">${userAnswers[q]}</div>
-    `;
-    summaryDiv.appendChild(card);
-  }
-}
-
-
 // Adventure Page
 function showAdventure() {
   playClick();
   showPage("adventurePage");
-
   const content = document.getElementById("adventureContent");
   content.innerHTML = "";
 
-  // Match pattern
   let matchedPattern = null;
   for (let p of patterns) {
     let match = true;
     for (let q in p.answers) {
-      if (userAnswers[q] !== p.answers[q]) {
-        match = false;
-        break;
-      }
+      if (userAnswers[q] !== p.answers[q]) { match = false; break; }
     }
-    if (match) {
-      matchedPattern = p;
-      break;
-    }
+    if (match) { matchedPattern = p; break; }
   }
 
-  // Build Result
   if (matchedPattern) {
     content.innerHTML = `
       <p>"Hehe okie so ... here's what we're gonna do!" silly goose exclaims.</p>
@@ -461,9 +377,7 @@ function showAdventure() {
       <p><strong>🗺 Google Map:</strong> 
         <a href="${matchedPattern.mapLink}" target="_blank">${matchedPattern.mapLink}</a>
       </p>
-
       <br>
-
       <p>Silly goose would like to know what dino thinks of this idea!  
       Please screenshot this page and send her a text :)</p>
     `;
@@ -475,7 +389,6 @@ function showAdventure() {
   }
 }
 
-
 // Restart Quiz
 function restartQuiz(){
   playClick();
@@ -483,7 +396,6 @@ function restartQuiz(){
   document.querySelectorAll("input[type=radio]").forEach(r=>r.checked=false);
   showPage("titlePage");
 }
-
 
 // Click Sound
 function playClick(){
