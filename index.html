@@ -44,6 +44,7 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
   <!-- Title Page -->
   <div id="titlePage" class="page active">
     <h1>🌟Dino and Silly Goose Goes on an Adventure🌟</h1>
+    <img src="images/sillygooseanddino.png" alt="sillygooseanddino" class="title-image">
     <button class="next" onclick="startIntro()">Start</button>
   </div>
 
@@ -51,7 +52,6 @@ input[type="radio"]:checked + .pill { background-color: #4a90e2; color: white; b
   <div id="introPage" class="page">
     <h2>It's time for an adventure!</h2>
     <p>Answer the questions honestly and stay tuned for the final reveal!</p>
-    <img src="images/music.png" alt="Music" class="question-image">
     <button class="next" onclick="startQuiz()">Lesgooo</button>
   </div>
 
@@ -438,7 +438,7 @@ function showAdventure() {
   if (matchedPattern) {
     content.innerHTML = `
       <p>"Hehe okie so ... here's what we're gonna do!" silly goose exclaims.</p>
-
+      <img src="images/adventure.png" alt="Adventure" class="adventure-image">
       <p><strong>📍 Location:</strong> ${matchedPattern.location}</p>
       <p><strong>🍔 Nomz:</strong> ${matchedPattern.nomz}</p>
       <p><strong>👕 Outfit:</strong> ${matchedPattern.outfit}</p>
