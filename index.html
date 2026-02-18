@@ -391,7 +391,7 @@ function nextQuestion(num){
 
   const current = document.getElementById(`q${num}`);
   userQuestions[`q${num}`] = current.querySelector(".question-text").textContent;
-  userAnswers[`q${num}`] = selected.parentElement.textContent.trim();
+  userAnswers[`q${num}`] = selected.value; // instead of selected.parentElement.textContent
   history.push(current.id);
 
   let nextId = nextQuestionMap[`q${num}`]?.[selected.value];
